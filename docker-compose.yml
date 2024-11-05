@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: documentos-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Volumen para la base de datos
+      - ./data:/code/data
+      # Volumen específico para los documentos
+      - ${REPOSITORY_PATH:-./data/documents}:/code/data/documents
+      # Archivo de configuración
+      - ./.env:/code/.env
+    environment:
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///./data/documents.db}
+      - REPOSITORY_PATH=${REPOSITORY_PATH:-/code/data/documents}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

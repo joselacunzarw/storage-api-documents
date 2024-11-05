@@ -1,0 +1,22 @@
+# Framework y servidor
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# Base de datos
+sqlalchemy>=2.0.23
+
+# Configuración y validación
+python-dotenv>=1.0.0
+pydantic>=2.5.1
+pydantic-settings>=2.1.0
+
+# Manejo de archivos y formularios
+python-multipart>=0.0.6
+aiofiles>=23.2.1
+
+# Monitoreo y sistema
+psutil>=5.9.0
+aiohttp>=3.9.0
+
+# Utilidades
+python-magic>=0.4.27    # Para detección de tipos MIME
