@@ -54,7 +54,8 @@ cd [NOMBRE_DEL_DIRECTORIO]
 2. Crear archivo .env:
 ```env
 DATABASE_URL=sqlite:///./data/documents.db
-REPOSITORY_PATH=/code/data/documents
+REPOSITORY_PATH=./data/documents
+OPENAI_API_KEY=apikey
 ```
 
 3. Crear directorios necesarios:
